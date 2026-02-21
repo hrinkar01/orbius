@@ -34,7 +34,7 @@ export default function Home() {
 
       {/* HERO */}
       <section className="relative flex flex-col items-center justify-center min-h-screen text-center px-6 pt-20">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-[#7C5CFC]/10 blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-150 h-150 rounded-full bg-[#7C5CFC]/10 blur-[120px] pointer-events-none" />
         <div className="absolute top-1/3 left-1/4 w-64 h-64 rounded-full bg-[#FC5CF7]/5 blur-[80px] pointer-events-none" />
 
         {/* Orbit Animation */}
@@ -42,7 +42,7 @@ export default function Home() {
           <div className="absolute inset-0 rounded-full border border-[#7C5CFC]/30 animate-spin" style={{ animationDuration: "12s" }} />
           <div className="absolute inset-4 rounded-full border border-[#7C5CFC]/20 animate-spin" style={{ animationDuration: "8s", animationDirection: "reverse" }} />
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#7C5CFC] to-[#FC5CF7] shadow-lg shadow-[#7C5CFC]/40" />
+            <div className="w-12 h-12 rounded-full bg-linear-to-br from-[#7C5CFC] to-[#FC5CF7] shadow-lg shadow-[#7C5CFC]/40" />
           </div>
         </div>
 
@@ -54,7 +54,7 @@ export default function Home() {
 
         {/* Heading */}
         <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-none mb-6 max-w-4xl" style={{ fontFamily: "Syne, sans-serif" }}>
-          Where <span className="bg-gradient-to-r from-[#7C5CFC] via-[#A994FF] to-[#FC5CF7] bg-clip-text text-transparent">ideas</span> find their orbit.
+          Where <span className="bg-linear-to-r from-[#7C5CFC] via-[#A994FF] to-[#FC5CF7] bg-clip-text text-transparent">ideas</span> find their orbit.
         </h1>
 
         <p className="text-lg md:text-xl text-white/40 max-w-xl mb-10 leading-relaxed">
@@ -62,13 +62,13 @@ export default function Home() {
           </p>
 
         <div className="flex flex-col sm:flex-row gap-4">
-          <a href="#ideareviewer" className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#7C5CFC] to-[#A070FC] hover:opacity-90 font-semibold text-sm transition-all shadow-lg shadow-[#7C5CFC]/30 hover:-translate-y-0.5">Try IdeaReviewer Free</a>
+          <a href="#ideareviewer" className="px-8 py-3.5 rounded-full bg-linear-to-r from-[#7C5CFC] to-[#A070FC] hover:opacity-90 font-semibold text-sm transition-all shadow-lg shadow-[#7C5CFC]/30 hover:-translate-y-0.5">Try IdeaReviewer Free</a>
           <a href="#about" className="px-8 py-3.5 rounded-full border border-white/10 hover:border-white/20 font-semibold text-sm text-white/60 hover:text-white transition-all">Learn More</a>
         </div>
 
         <div className="absolute bottom-8 flex flex-col items-center gap-2 text-white/20 text-xs">
           <span>scroll</span>
-          <div className="w-px h-8 bg-gradient-to-b from-white/20 to-transparent" />
+          <div className="w-px h-8 bg-linear-to-b from-white/20 to-transparent" />
         </div>
       </section>
 
@@ -82,7 +82,7 @@ export default function Home() {
 
         <div className="grid md:grid-cols-2 gap-6">
           {/* IdeaReviewer */}
-          <div id="ideareviewer" className="md:col-span-2 relative rounded-2xl border border-[#7C5CFC]/30 bg-gradient-to-br from-[#7C5CFC]/10 via-[#060608] to-[#FC5CF7]/5 p-8 overflow-hidden group hover:border-[#7C5CFC]/60 transition-all">
+          <div id="ideareviewer" className="md:col-span-2 relative rounded-2xl border border-[#7C5CFC]/30 bg-linear-to-br from-[#7C5CFC]/10 via-[#060608] to-[#FC5CF7]/5 p-8 overflow-hidden group hover:border-[#7C5CFC]/60 transition-all">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#7C5CFC]/10 rounded-full blur-3xl pointer-events-none" />
             <div className="relative">
               <div className="flex items-center gap-3 mb-4">
@@ -110,7 +110,7 @@ export default function Home() {
 
           {/* Coming Soon */}
           {["Product 02", "Product 03"].map((p) => (
-            <div key={p} className="rounded-2xl border border-white/5 bg-white/[0.02] p-8 flex flex-col items-start justify-between min-h-48 hover:border-white/10 transition-all">
+            <div key={p} className="rounded-2xl border border-white/5 bg-white/2 p-8 flex flex-col items-start justify-between min-h-48 hover:border-white/10 transition-all">
               <div>
                 <div className="text-xs text-white/20 uppercase tracking-widest mb-3">{p}</div>
                 <h3 className="text-2xl font-bold text-white/20" style={{ fontFamily: "Syne, sans-serif" }}>Coming Soon</h3>
@@ -140,7 +140,7 @@ export default function Home() {
               { num: "0", label: "Gatekeeping" },
               { num: "100%", label: "Founder-First" },
             ].map((s) => (
-              <div key={s.label} className="p-6 rounded-2xl bg-white/[0.03] border border-white/5 text-center">
+              <div key={s.label} className="p-6 rounded-2xl bg-white/3 border border-white/5 text-center">
                 <div className="text-3xl font-black text-[#A994FF] mb-1" style={{ fontFamily: "Syne, sans-serif" }}>{s.num}</div>
                 <div className="text-white/30 text-xs uppercase tracking-widest">{s.label}</div>
               </div>
@@ -156,7 +156,7 @@ export default function Home() {
           <div className="relative p-12 rounded-3xl border border-[#7C5CFC]/20 bg-[#7C5CFC]/5">
             <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-4" style={{ fontFamily: "Syne, sans-serif" }}>Ready to launch?</h2>
             <p className="text-white/40 mb-8">Submit your idea to IdeaReviewer and get the honest feedback you need to build with confidence.</p>
-            <a href="#" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#7C5CFC] to-[#A070FC] hover:opacity-90 font-bold transition-all shadow-xl shadow-[#7C5CFC]/30 hover:-translate-y-0.5 text-sm">Submit Your Idea Free</a>
+            <a href="#" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-linear-to-r from-[#7C5CFC] to-[#A070FC] hover:opacity-90 font-bold transition-all shadow-xl shadow-[#7C5CFC]/30 hover:-translate-y-0.5 text-sm">Submit Your Idea Free</a>
           </div>
         </div>
       </section>
