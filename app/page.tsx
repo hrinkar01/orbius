@@ -58,8 +58,8 @@ export default function Home() {
         </h1>
 
         <p className="text-lg md:text-xl text-white/40 max-w-xl mb-10 leading-relaxed">
-          Orbius builds products that help founders and creators validate, refine, and launch ideas — faster than ever before.
-        </p>
+        IdeaReviewr is a decision-first startup validation platform that helps early-stage founders avoid wasting months on weak ideas by aggregating real target-user demand signals into clear proceed, pivot, or kill decisions within 24 hours.
+          </p>
 
         <div className="flex flex-col sm:flex-row gap-4">
           <a href="#ideareviewer" className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#7C5CFC] to-[#A070FC] hover:opacity-90 font-semibold text-sm transition-all shadow-lg shadow-[#7C5CFC]/30 hover:-translate-y-0.5">Try IdeaReviewer Free</a>
