@@ -88,7 +88,7 @@ export default function Home() {
 
       {/* HERO */}
       <section className="relative flex items-center justify-center min-h-screen px-6 pt-20">
-        <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] rounded-full bg-[#7C5CFC]/10 blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/3 w-125 h-125 rounded-full bg-[#7C5CFC]/10 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-[#FC5CF7]/5 blur-[80px] pointer-events-none" />
 
         <div className="relative max-w-6xl w-full mx-auto grid md:grid-cols-2 gap-16 items-center">
@@ -97,7 +97,7 @@ export default function Home() {
           <div className="flex flex-col items-start text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#7C5CFC]/30 bg-[#7C5CFC]/10 text-xs text-[#A994FF] mb-6 tracking-widest uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-[#7C5CFC] animate-pulse" />
-              Now in Beta — IdeaReviewer is Live
+              Now in Beta
             </div>
             <h1 className="text-5xl md:text-6xl font-black tracking-tighter leading-none mb-6" style={{ fontFamily: "Syne, sans-serif" }}>
               Where{" "}
