@@ -88,7 +88,7 @@ export default function Home() {
 
       {/* HERO */}
       <section className="relative flex items-center justify-center min-h-screen px-6 pt-20">
-        <div className="absolute top-1/4 left-1/3 w-125 h-125 rounded-full bg-[#7C5CFC]/10 blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] rounded-full bg-[#7C5CFC]/10 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-[#FC5CF7]/5 blur-[80px] pointer-events-none" />
 
         <div className="relative max-w-6xl w-full mx-auto grid md:grid-cols-2 gap-16 items-center">
@@ -104,13 +104,9 @@ export default function Home() {
               <span className="bg-linear-to-r from-[#7C5CFC] via-[#A994FF] to-[#FC5CF7] bg-clip-text text-transparent">ideas</span>
               <br />find their<br />orbit.
             </h1>
-            <p className="text-lg text-white/40 max-w-md mb-10 leading-relaxed">
+            <p className="text-lg text-white/40 max-w-md leading-relaxed">
               Orbius builds products that help founders and creators validate, refine, and launch ideas — faster than ever before.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#ideareviewer" className="px-8 py-3.5 rounded-full bg-linear-to-r from-[#7C5CFC] to-[#A070FC] hover:opacity-90 font-semibold text-sm transition-all shadow-lg shadow-[#7C5CFC]/30 hover:-translate-y-0.5">Try IdeaReviewer Free</a>
-              <a href="#about" className="px-8 py-3.5 rounded-full border border-white/10 hover:border-white/20 font-semibold text-sm text-white/60 hover:text-white transition-all">Learn More</a>
-            </div>
           </div>
 
           {/* RIGHT — Logo */}
@@ -240,4 +236,4 @@ export default function Home() {
 
     </main>
   );
-} 
+}
