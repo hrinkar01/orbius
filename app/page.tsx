@@ -42,7 +42,7 @@ export default function Home() {
           <div className="absolute inset-0 rounded-full border border-[#7C5CFC]/30 animate-spin" style={{ animationDuration: "12s" }} />
           <div className="absolute inset-4 rounded-full border border-[#7C5CFC]/20 animate-spin" style={{ animationDuration: "8s", animationDirection: "reverse" }} />
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-12 h-12 rounded-full bg-linear-to-br from-[#7C5CFC] to-[#FC5CF7] shadow-lg shadow-[#7C5CFC]/40" />
+            <div className="w-12 h-12 rounded-full bg-linear-to-brrom-[#7C5CFC] to-[#FC5CF7] shadow-lg shadow-[#7C5CFC]/40" />
           </div>
         </div>
 
@@ -58,8 +58,8 @@ export default function Home() {
         </h1>
 
         <p className="text-lg md:text-xl text-white/40 max-w-xl mb-10 leading-relaxed">
-        IdeaReviewr is a decision-first startup validation platform that helps early-stage founders avoid wasting months on weak ideas by aggregating real target-user demand signals into clear proceed, pivot, or kill decisions within 24 hours.
-          </p>
+          Orbius builds products that help founders and creators validate, refine, and launch ideas — faster than ever before.
+        </p>
 
         <div className="flex flex-col sm:flex-row gap-4">
           <a href="#ideareviewer" className="px-8 py-3.5 rounded-full bg-linear-to-r from-[#7C5CFC] to-[#A070FC] hover:opacity-90 font-semibold text-sm transition-all shadow-lg shadow-[#7C5CFC]/30 hover:-translate-y-0.5">Try IdeaReviewer Free</a>
@@ -90,7 +90,7 @@ export default function Home() {
                 <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">Beta</span>
               </div>
               <h3 className="text-3xl md:text-4xl font-black tracking-tighter mb-3" style={{ fontFamily: "Syne, sans-serif" }}>IdeaReviewer</h3>
-              <p className="text-white/50 text-lg max-w-2xl mb-8 leading-relaxed">A marketplace where founders submit their startup ideas and get real, structured feedback from a community of entrepreneurs, investors, and builders. Stop guessing — know if your idea has legs before you build.</p>
+              <p className="text-white/50 text-lg max-w-2xl mb-8 leading-relaxed">A decision-first startup validation platform that helps early-stage founders avoid wasting months on weak ideas by aggregating real target-user demand signals into clear proceed, pivot, or kill decisions within 24 hours.</p>
               <div className="grid sm:grid-cols-3 gap-4 mb-8">
                 {[
                   { icon: "🎯", label: "Structured Feedback", desc: "Scored reviews across traction, market, and execution" },
