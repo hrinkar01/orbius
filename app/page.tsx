@@ -13,19 +13,13 @@ export default function Home() {
         glowRef.current.style.top = e.clientY - 192 + "px";
       }
     };
-
     const handleScroll = () => {
       const currentY = window.scrollY;
-      if (currentY < 10) {
-        setVisible(true);
-      } else if (currentY > lastScrollY.current) {
-        setVisible(false);
-      } else {
-        setVisible(true);
-      }
+      if (currentY < 10) setVisible(true);
+      else if (currentY > lastScrollY.current) setVisible(false);
+      else setVisible(true);
       lastScrollY.current = currentY;
     };
-
     window.addEventListener("mousemove", handleMouse);
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -80,10 +74,10 @@ export default function Home() {
         </div>
         <div className="hidden md:flex gap-8 text-sm text-white/50">
           <a href="#products" className="hover:text-white transition-colors">Products</a>
-          <a href="#ideareviewer" className="hover:text-white transition-colors">IdeaReviewer</a>
+          <a href="/ideareviewer" className="hover:text-white transition-colors">IdeaReviewer</a>
           <a href="#about" className="hover:text-white transition-colors">About</a>
         </div>
-        <a href="#ideareviewer" className="text-sm px-4 py-2 rounded-full bg-[#7C5CFC]/20 border border-[#7C5CFC]/40 hover:bg-[#7C5CFC]/30 transition-all">Get Early Access</a>
+        <a href="/ideareviewer" className="text-sm px-4 py-2 rounded-full bg-[#7C5CFC]/20 border border-[#7C5CFC]/40 hover:bg-[#7C5CFC]/30 transition-all">Get Early Access</a>
       </nav>
 
       {/* HERO */}
@@ -142,12 +136,13 @@ export default function Home() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
+          {/* IdeaReviewer */}
           <div id="ideareviewer" className="md:col-span-2 relative rounded-2xl border border-[#7C5CFC]/30 bg-linear-to-br from-[#7C5CFC]/10 via-[#060608] to-[#FC5CF7]/5 p-8 overflow-hidden group hover:border-[#7C5CFC]/60 transition-all">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#7C5CFC]/10 rounded-full blur-3xl pointer-events-none" />
             <div className="relative">
               <div className="flex items-center gap-3 mb-4">
                 <span className="px-3 py-1 rounded-full bg-[#7C5CFC]/20 border border-[#7C5CFC]/40 text-[#A994FF] text-xs font-semibold">✦ Featured Product</span>
-                <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">Beta</span>
+                <span className="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold">Coming Soon</span>
               </div>
               <h3 className="text-3xl md:text-4xl font-black tracking-tighter mb-3" style={{ fontFamily: "Syne, sans-serif" }}>IdeaReviewer</h3>
               <p className="text-white/50 text-lg max-w-2xl mb-8 leading-relaxed">A decision-first startup validation platform that helps early-stage founders avoid wasting months on weak ideas by aggregating real target-user demand signals into clear proceed, pivot, or kill decisions within 24 hours.</p>
@@ -164,10 +159,11 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <a href="#" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#7C5CFC] hover:bg-[#6A4AEA] font-semibold text-sm transition-all shadow-lg shadow-[#7C5CFC]/30 hover:-translate-y-0.5">Get Early Access</a>
+              <a href="/ideareviewer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#7C5CFC] hover:bg-[#6A4AEA] font-semibold text-sm transition-all shadow-lg shadow-[#7C5CFC]/30 hover:-translate-y-0.5">Learn More & Join Waitlist</a>
             </div>
           </div>
 
+          {/* Coming Soon */}
           {["Product 02", "Product 03"].map((p) => (
             <div key={p} className="rounded-2xl border border-white/5 bg-white/2 p-8 flex flex-col items-start justify-between min-h-48 hover:border-white/10 transition-all">
               <div>
@@ -214,8 +210,8 @@ export default function Home() {
           <div className="absolute inset-0 bg-[#7C5CFC]/5 rounded-3xl blur-3xl pointer-events-none" />
           <div className="relative p-12 rounded-3xl border border-[#7C5CFC]/20 bg-[#7C5CFC]/5">
             <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-4" style={{ fontFamily: "Syne, sans-serif" }}>Ready to launch?</h2>
-            <p className="text-white/40 mb-8">Submit your idea to IdeaReviewer and get the honest feedback you need to build with confidence.</p>
-            <a href="#" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-linear-to-r from-[#7C5CFC] to-[#A070FC] hover:opacity-90 font-bold transition-all shadow-xl shadow-[#7C5CFC]/30 hover:-translate-y-0.5 text-sm">Submit Your Idea Free</a>
+            <p className="text-white/40 mb-8">Join the IdeaReviewer waitlist and be first to validate your startup idea with real structured feedback.</p>
+            <a href="/ideareviewer#waitlist" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-linear-to-r from-[#7C5CFC] to-[#A070FC] hover:opacity-90 font-bold transition-all shadow-xl shadow-[#7C5CFC]/30 hover:-translate-y-0.5 text-sm">Join the Waitlist Free</a>
           </div>
         </div>
       </section>
