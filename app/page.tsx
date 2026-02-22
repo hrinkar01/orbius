@@ -52,6 +52,9 @@ export default function Home() {
     </svg>
   );
 
+  const BG = "Bricolage Grotesque, sans-serif";
+  const MR = "Manrope, sans-serif";
+
   return (
     <main className="bg-[#060608] text-white min-h-screen overflow-x-hidden">
 
@@ -59,46 +62,41 @@ export default function Home() {
       <div ref={glowRef} className="pointer-events-none fixed z-50 w-96 h-96 rounded-full opacity-10 blur-3xl" style={{ background: "radial-gradient(circle, #7C5CFC, transparent)" }} />
 
       {/* NAVBAR */}
-      <nav
-        className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-8 py-5 border-b border-white/5 backdrop-blur-md bg-[#060608]/70"
-        style={{
-          transform: visible ? "translateY(0)" : "translateY(-100%)",
-          transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-        }}
-      >
+      <nav className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-8 py-5 border-b border-white/5 backdrop-blur-md bg-[#060608]/70"
+        style={{ transform: visible ? "translateY(0)" : "translateY(-100%)", transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)" }}>
         <div className="flex items-center gap-2.5">
           <OrbLogo size={32} />
-          <span className="text-xl font-black tracking-tighter" style={{ fontFamily: "Syne, sans-serif" }}>
+          <span className="text-xl font-black tracking-tighter" style={{ fontFamily: BG }}>
             <span className="text-[#7C5CFC]">orb</span>ius
           </span>
         </div>
-        <div className="hidden md:flex gap-8 text-sm text-white/50">
+        <div className="hidden md:flex gap-8 text-sm text-white/50" style={{ fontFamily: MR }}>
           <a href="#products" className="hover:text-white transition-colors">Products</a>
           <a href="/ideareviewer" className="hover:text-white transition-colors">IdeaReviewer</a>
           <a href="#about" className="hover:text-white transition-colors">About</a>
         </div>
-        <a href="/ideareviewer" className="text-sm px-4 py-2 rounded-full bg-[#7C5CFC]/20 border border-[#7C5CFC]/40 hover:bg-[#7C5CFC]/30 transition-all">Get Early Access</a>
+        <a href="/ideareviewer" className="text-sm px-4 py-2 rounded-full bg-[#7C5CFC]/20 border border-[#7C5CFC]/40 hover:bg-[#7C5CFC]/30 transition-all" style={{ fontFamily: MR }}>Get Early Access</a>
       </nav>
 
       {/* HERO */}
       <section className="relative flex items-center justify-center min-h-screen px-6 pt-20">
-        <div className="absolute top-1/4 left-1/3 w-125 h-125 rounded-full bg-[#7C5CFC]/10 blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/3 w-125ull bg-[#7C5CFC]/10 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-[#FC5CF7]/5 blur-[80px] pointer-events-none" />
 
         <div className="relative max-w-6xl w-full mx-auto grid md:grid-cols-2 gap-16 items-center">
 
           {/* LEFT — Text */}
           <div className="flex flex-col items-start text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#7C5CFC]/30 bg-[#7C5CFC]/10 text-xs text-[#A994FF] mb-6 tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#7C5CFC]/30 bg-[#7C5CFC]/10 text-xs text-[#A994FF] mb-6 tracking-widest uppercase" style={{ fontFamily: MR }}>
               <span className="w-1.5 h-1.5 rounded-full bg-[#7C5CFC] animate-pulse" />
               Now in Beta
             </div>
-            <h1 className="text-5xl md:text-6xl font-black tracking-tighter leading-none mb-6" style={{ fontFamily: "Syne, sans-serif" }}>
+            <h1 className="text-5xl md:text-6xl font-black tracking-tighter leading-none mb-6" style={{ fontFamily: BG }}>
               Where{" "}
               <span className="bg-linear-to-r from-[#7C5CFC] via-[#A994FF] to-[#FC5CF7] bg-clip-text text-transparent">ideas</span>
               <br />find their<br />orbit.
             </h1>
-            <p className="text-lg text-white/40 max-w-md leading-relaxed">
+            <p className="text-lg text-white/40 max-w-md leading-relaxed" style={{ fontFamily: MR }}>
               Orbius builds products that help founders and creators validate, refine, and launch ideas — faster than ever before.
             </p>
           </div>
@@ -123,29 +121,27 @@ export default function Home() {
               </div>
             </div>
           </div>
-
         </div>
       </section>
 
       {/* PRODUCTS */}
       <section id="products" className="px-6 py-24 max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-[#7C5CFC] text-sm tracking-widest uppercase mb-3">Our Products</p>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tighter" style={{ fontFamily: "Syne, sans-serif" }}>Built for builders.</h2>
-          <p className="text-white/40 mt-4 max-w-md mx-auto">A growing suite of tools designed to accelerate every stage of your startup journey.</p>
+          <p className="text-[#7C5CFC] text-sm tracking-widest uppercase mb-3" style={{ fontFamily: MR }}>Our Products</p>
+          <h2 className="text-4xl md:text-5xl font-black tracking-tighter" style={{ fontFamily: BG }}>Built for builders.</h2>
+          <p className="text-white/40 mt-4 max-w-md mx-auto" style={{ fontFamily: MR }}>A growing suite of tools designed to accelerate every stage of your startup journey.</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {/* IdeaReviewer */}
           <div id="ideareviewer" className="md:col-span-2 relative rounded-2xl border border-[#7C5CFC]/30 bg-linear-to-br from-[#7C5CFC]/10 via-[#060608] to-[#FC5CF7]/5 p-8 overflow-hidden group hover:border-[#7C5CFC]/60 transition-all">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#7C5CFC]/10 rounded-full blur-3xl pointer-events-none" />
             <div className="relative">
               <div className="flex items-center gap-3 mb-4">
-                <span className="px-3 py-1 rounded-full bg-[#7C5CFC]/20 border border-[#7C5CFC]/40 text-[#A994FF] text-xs font-semibold">✦ Featured Product</span>
-                <span className="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold">Coming Soon</span>
+                <span className="px-3 py-1 rounded-full bg-[#7C5CFC]/20 border border-[#7C5CFC]/40 text-[#A994FF] text-xs font-semibold" style={{ fontFamily: MR }}>✦ Featured Product</span>
+                <span className="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold" style={{ fontFamily: MR }}>Coming Soon</span>
               </div>
-              <h3 className="text-3xl md:text-4xl font-black tracking-tighter mb-3" style={{ fontFamily: "Syne, sans-serif" }}>IdeaReviewer</h3>
-              <p className="text-white/50 text-lg max-w-2xl mb-8 leading-relaxed">A decision-first startup validation platform that helps early-stage founders avoid wasting months on weak ideas by aggregating real target-user demand signals into clear proceed, pivot, or kill decisions within 24 hours.</p>
+              <h3 className="text-3xl md:text-4xl font-black tracking-tighter mb-3" style={{ fontFamily: BG }}>IdeaReviewer</h3>
+              <p className="text-white/50 text-lg max-w-2xl mb-8 leading-relaxed" style={{ fontFamily: MR }}>A decision-first startup validation platform that helps early-stage founders avoid wasting months on weak ideas by aggregating real target-user demand signals into clear proceed, pivot, or kill decisions within 24 hours.</p>
               <div className="grid sm:grid-cols-3 gap-4 mb-8">
                 {[
                   { icon: "🎯", label: "Structured Feedback", desc: "Scored reviews across traction, market, and execution" },
@@ -154,24 +150,23 @@ export default function Home() {
                 ].map((f) => (
                   <div key={f.label} className="p-4 rounded-xl bg-white/5 border border-white/5 hover:border-white/10 transition-all">
                     <div className="text-2xl mb-2">{f.icon}</div>
-                    <div className="font-semibold text-sm mb-1">{f.label}</div>
-                    <div className="text-white/40 text-xs leading-relaxed">{f.desc}</div>
+                    <div className="font-semibold text-sm mb-1" style={{ fontFamily: BG }}>{f.label}</div>
+                    <div className="text-white/40 text-xs leading-relaxed" style={{ fontFamily: MR }}>{f.desc}</div>
                   </div>
                 ))}
               </div>
-              <a href="/ideareviewer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#7C5CFC] hover:bg-[#6A4AEA] font-semibold text-sm transition-all shadow-lg shadow-[#7C5CFC]/30 hover:-translate-y-0.5">Learn More & Join Waitlist</a>
+              <a href="/ideareviewer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#7C5CFC] hover:bg-[#6A4AEA] font-semibold text-sm transition-all shadow-lg shadow-[#7C5CFC]/30 hover:-translate-y-0.5" style={{ fontFamily: MR }}>Learn More & Join Waitlist</a>
             </div>
           </div>
 
-          {/* Coming Soon */}
           {["Product 02", "Product 03"].map((p) => (
             <div key={p} className="rounded-2xl border border-white/5 bg-white/2 p-8 flex flex-col items-start justify-between min-h-48 hover:border-white/10 transition-all">
               <div>
-                <div className="text-xs text-white/20 uppercase tracking-widest mb-3">{p}</div>
-                <h3 className="text-2xl font-bold text-white/20" style={{ fontFamily: "Syne, sans-serif" }}>Coming Soon</h3>
-                <p className="text-white/20 text-sm mt-2">We&apos;re cooking something new.</p>
+                <div className="text-xs text-white/20 uppercase tracking-widest mb-3" style={{ fontFamily: MR }}>{p}</div>
+                <h3 className="text-2xl font-bold text-white/20" style={{ fontFamily: BG }}>Coming Soon</h3>
+                <p className="text-white/20 text-sm mt-2" style={{ fontFamily: MR }}>We&apos;re cooking something new.</p>
               </div>
-              <div className="mt-6 px-4 py-2 rounded-full border border-white/10 text-white/20 text-xs">Stay tuned</div>
+              <div className="mt-6 px-4 py-2 rounded-full border border-white/10 text-white/20 text-xs" style={{ fontFamily: MR }}>Stay tuned</div>
             </div>
           ))}
         </div>
@@ -181,12 +176,12 @@ export default function Home() {
       <section id="about" className="px-6 py-24 border-t border-white/5">
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="text-[#7C5CFC] text-sm tracking-widest uppercase mb-4">About Orbius</p>
-            <h2 className="text-4xl font-black tracking-tighter mb-6" style={{ fontFamily: "Syne, sans-serif" }}>
+            <p className="text-[#7C5CFC] text-sm tracking-widest uppercase mb-4" style={{ fontFamily: MR }}>About Orbius</p>
+            <h2 className="text-4xl font-black tracking-tighter mb-6" style={{ fontFamily: BG }}>
               We build tools that <span className="text-[#A994FF]">unlock potential.</span>
             </h2>
-            <p className="text-white/40 leading-relaxed mb-4">Orbius is a startup studio on a mission to empower early-stage founders with the tools they need to go from idea to launch confidently.</p>
-            <p className="text-white/40 leading-relaxed">We believe great ideas deserve great feedback — and that the best way to build is in public, with community at the center.</p>
+            <p className="text-white/40 leading-relaxed mb-4" style={{ fontFamily: MR }}>Orbius is a startup studio on a mission to empower early-stage founders with the tools they need to go from idea to launch confidently.</p>
+            <p className="text-white/40 leading-relaxed" style={{ fontFamily: MR }}>We believe great ideas deserve great feedback — and that the best way to build is in public, with community at the center.</p>
           </div>
           <div className="grid grid-cols-2 gap-4">
             {[
@@ -196,8 +191,8 @@ export default function Home() {
               { num: "100%", label: "Founder-First" },
             ].map((s) => (
               <div key={s.label} className="p-6 rounded-2xl bg-white/3 border border-white/5 text-center">
-                <div className="text-3xl font-black text-[#A994FF] mb-1" style={{ fontFamily: "Syne, sans-serif" }}>{s.num}</div>
-                <div className="text-white/30 text-xs uppercase tracking-widest">{s.label}</div>
+                <div className="text-3xl font-black text-[#A994FF] mb-1" style={{ fontFamily: BG }}>{s.num}</div>
+                <div className="text-white/30 text-xs uppercase tracking-widest" style={{ fontFamily: MR }}>{s.label}</div>
               </div>
             ))}
           </div>
@@ -209,9 +204,9 @@ export default function Home() {
         <div className="max-w-2xl mx-auto text-center relative">
           <div className="absolute inset-0 bg-[#7C5CFC]/5 rounded-3xl blur-3xl pointer-events-none" />
           <div className="relative p-12 rounded-3xl border border-[#7C5CFC]/20 bg-[#7C5CFC]/5">
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-4" style={{ fontFamily: "Syne, sans-serif" }}>Ready to launch?</h2>
-            <p className="text-white/40 mb-8">Join the IdeaReviewer waitlist and be first to validate your startup idea with real structured feedback.</p>
-            <a href="/ideareviewer#waitlist" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-linear-to-r from-[#7C5CFC] to-[#A070FC] hover:opacity-90 font-bold transition-all shadow-xl shadow-[#7C5CFC]/30 hover:-translate-y-0.5 text-sm">Join the Waitlist Free</a>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-4" style={{ fontFamily: BG }}>Ready to launch?</h2>
+            <p className="text-white/40 mb-8" style={{ fontFamily: MR }}>Join the IdeaReviewer waitlist and be first to validate your startup idea with real structured feedback.</p>
+            <a href="/ideareviewer#waitlist" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-linear-to-r from-[#7C5CFC] to-[#A070FC] hover:opacity-90 font-bold transition-all shadow-xl shadow-[#7C5CFC]/30 hover:-translate-y-0.5 text-sm" style={{ fontFamily: MR }}>Join the Waitlist Free</a>
           </div>
         </div>
       </section>
@@ -220,10 +215,10 @@ export default function Home() {
       <footer className="border-t border-white/5 px-8 py-8 flex flex-col md:flex-row items-center justify-between text-white/20 text-sm">
         <div className="flex items-center gap-2.5">
           <OrbLogo size={22} />
-          <span><span className="text-[#7C5CFC] font-bold">orb</span>ius — 2025</span>
+          <span style={{ fontFamily: BG }}><span className="text-[#7C5CFC] font-bold">orb</span>ius — 2025</span>
         </div>
-        <span>Built with love for founders.</span>
-        <div className="flex gap-6 mt-4 md:mt-0">
+        <span style={{ fontFamily: MR }}>Built with love for founders.</span>
+        <div className="flex gap-6 mt-4 md:mt-0" style={{ fontFamily: MR }}>
           <a href="#" className="hover:text-white/50 transition-colors">Twitter</a>
           <a href="#" className="hover:text-white/50 transition-colors">LinkedIn</a>
           <a href="#" className="hover:text-white/50 transition-colors">Contact</a>
