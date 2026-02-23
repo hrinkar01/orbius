@@ -1,33 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Manrope:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
 
+/* ============================================
+   ORBIUS THEME VARIABLES
+   Change here → updates everything CSS-side
+   ============================================ */
+:root {
+  --primary:     #0EA5E9;
+  --primary-hov: #0284C7;
+  --secondary:   #38BDF8;
+  --accent:      #67E8F9;
+  --muted:       #7DD3FC;
+  --deep:        #0369A1;
+
+  --bg-page:  #060608;
+  --bg-card:  rgba(255, 255, 255, 0.02);
+
+  --font-heading: 'Bricolage Grotesque', sans-serif;
+  --font-body:    'Manrope', sans-serif;
+}
+
 @theme {
   @keyframes spin-reverse {
     from { transform: rotate(360deg); }
-    to { transform: rotate(0deg); }
+    to   { transform: rotate(0deg); }
   }
   @keyframes orbit {
     from { transform: rotate(0deg) translateX(64px) rotate(0deg); }
-    to { transform: rotate(360deg) translateX(64px) rotate(-360deg); }
+    to   { transform: rotate(360deg) translateX(64px) rotate(-360deg); }
   }
 }
 
+/* ── BASE ── */
 body {
-  background: #060608;
-  color: white;
-  font-family: 'Manrope', sans-serif;
+  background:  var(--bg-page);
+  color:       white;
+  font-family: var(--font-body);
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Bricolage Grotesque', sans-serif;
+  font-family: var(--font-heading);
 }
 
+/* ── SELECTION ── */
 ::selection {
-  background: #7C5CFC40;
+  background: rgba(14, 165, 233, 0.25);
   color: white;
 }
 
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #060608; }
-::-webkit-scrollbar-thumb { background: #7C5CFC40; border-radius: 99px; }
-::-webkit-scrollbar-thumb:hover { background: #7C5CFC80; }
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar              { width: 4px; }
+::-webkit-scrollbar-track        { background: var(--bg-page); }
+::-webkit-scrollbar-thumb        { background: rgba(14,165,233,0.3); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover  { background: rgba(14,165,233,0.6); }

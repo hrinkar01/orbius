@@ -1,4 +1,5 @@
 "use client";
+import { theme, gradientText } from "@/lib/theme";
 import { useEffect, useRef, useState } from "react";
 
 export default function IdeaReviewer() {
@@ -32,8 +33,8 @@ export default function IdeaReviewer() {
     };
   }, []);
 
-  const BG = "Bricolage Grotesque, sans-serif";
-  const MR = "Manrope, sans-serif";
+  const BG = theme.fonts.heading;
+  const MR = theme.fonts.body;
 
   const OrbLogo = ({ size = 32 }: { size?: number }) => (
     <svg
@@ -56,7 +57,7 @@ export default function IdeaReviewer() {
         cx="32"
         cy="32"
         r="20"
-        stroke="#7C5CFC"
+        stroke={theme.colors.primary}
         strokeWidth="0.8"
         strokeOpacity="0.5"
       />
@@ -64,14 +65,14 @@ export default function IdeaReviewer() {
         cx="32"
         cy="32"
         r="11"
-        stroke="#FC5CF7"
+        stroke={theme.colors.accent}
         strokeWidth="0.8"
         strokeOpacity="0.4"
       />
       <circle cx="32" cy="32" r="7" fill="url(#grad2)" />
-      <circle cx="32" cy="2" r="3" fill="#7C5CFC" />
-      <circle cx="52" cy="32" r="2.5" fill="#FC5CF7" />
-      <circle cx="21" cy="43" r="1.8" fill="#A994FF" />
+      <circle cx="32" cy="2" r="3" fill={theme.colors.primary} />
+      <circle cx="52" cy="32" r="2.5" fill={theme.colors.accent} />
+      <circle cx="21" cy="43" r="1.8" fill={theme.colors.muted} />
       <circle cx="29" cy="29" r="2" fill="white" fillOpacity="0.3" />
       <defs>
         <linearGradient
@@ -82,8 +83,8 @@ export default function IdeaReviewer() {
           y2="64"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#7C5CFC" />
-          <stop offset="1" stopColor="#FC5CF7" />
+          <stop stopColor={theme.colors.primary} />
+          <stop offset="1" stopColor={theme.colors.accent} />
         </linearGradient>
         <radialGradient
           id="grad2"
@@ -92,9 +93,9 @@ export default function IdeaReviewer() {
           r="60%"
           gradientUnits="objectBoundingBox"
         >
-          <stop offset="0%" stopColor="#A994FF" />
-          <stop offset="50%" stopColor="#7C5CFC" />
-          <stop offset="100%" stopColor="#5B3FD4" />
+          <stop offset="0%" stopColor={theme.colors.muted} />
+          <stop offset="50%" stopColor={theme.colors.primary} />
+          <stop offset="100%" stopColor={theme.colors.deep} />
         </radialGradient>
       </defs>
     </svg>
@@ -212,7 +213,7 @@ export default function IdeaReviewer() {
       <div
         ref={glowRef}
         className="pointer-events-none fixed z-50 w-96 h-96 rounded-full opacity-10 blur-3xl"
-        style={{ background: "radial-gradient(circle, #7C5CFC, transparent)" }}
+        style={{ background: theme.gradients.glow }}
       />
 
       {/* NAVBAR */}
@@ -220,7 +221,10 @@ export default function IdeaReviewer() {
 
       {/* HERO */}
       <section className="relative flex flex-col items-center justify-center min-h-screen text-center px-6 pt-20">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-175400px] rounded-full bg-[#7C5CFC]/10 blur-[120px] pointer-events-none" />
+        <div
+          className="absolute top-1/4 left-1/2 -translate-x-1/2 w-175400px] rounded-full blur-[120px] pointer-events-none"
+          style={{ background: `${theme.colors.primary}1a` }}
+        />
 
         <div
           className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 text-xs text-amber-400 mb-6 tracking-widest uppercase"
@@ -236,9 +240,7 @@ export default function IdeaReviewer() {
         >
           Stop guessing.
           <br />
-          <span className="bg-linear-to-r from-[#7C5CFC] via-[#A994FF] to-[#FC5CF7] bg-clip-text text-transparent">
-            Start knowing.
-          </span>
+          <span style={gradientText}>Start knowing.</span>
         </h1>
 
         <p
@@ -252,8 +254,12 @@ export default function IdeaReviewer() {
 
         <a
           href="#waitlist"
-          className="px-10 py-4 rounded-full bg-linear-to-rm-[#7C5CFC] to-[#A070FC] hover:opacity-90 font-bold text-base transition-all shadow-xl shadow-[#7C5CFC]/30 hover:-translate-y-0.5"
-          style={{ fontFamily: MR }}
+          className="px-10 py-4 rounded-full hover:opacity-90 font-bold text-base transition-all hover:-translate-y-0.5 text-white"
+          style={{
+            fontFamily: MR,
+            background: theme.gradients.button,
+            boxShadow: theme.shadows.button,
+          }}
         >
           Join the Waitlist — It&apos;s Free
         </a>
@@ -266,8 +272,8 @@ export default function IdeaReviewer() {
           ].map((s) => (
             <div key={s.label} className="flex flex-col items-center">
               <span
-                className="text-3xl font-black text-[#A994FF]"
-                style={{ fontFamily: BG }}
+                className="text-3xl font-black"
+                style={{ fontFamily: BG, color: theme.colors.muted }}
               >
                 {s.num}
               </span>
@@ -286,8 +292,8 @@ export default function IdeaReviewer() {
       <section id="how-it-works" className="px-6 py-24 max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <p
-            className="text-[#7C5CFC] text-sm tracking-widest uppercase mb-3"
-            style={{ fontFamily: MR }}
+            className="text-sm tracking-widest uppercase mb-3"
+            style={{ fontFamily: MR, color: theme.colors.primary }}
           >
             The Process
           </p>
@@ -336,8 +342,8 @@ export default function IdeaReviewer() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <p
-              className="text-[#7C5CFC] text-sm tracking-widest uppercase mb-3"
-              style={{ fontFamily: MR }}
+              className="text-sm tracking-widest uppercase mb-3"
+              style={{ fontFamily: MR, color: theme.colors.primary }}
             >
               Early Feedback
             </p>
@@ -407,8 +413,8 @@ export default function IdeaReviewer() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <p
-              className="text-[#7C5CFC] text-sm tracking-widest uppercase mb-3"
-              style={{ fontFamily: MR }}
+              className="text-sm tracking-widest uppercase mb-3"
+              style={{ fontFamily: MR, color: theme.colors.primary }}
             >
               Pricing
             </p>
@@ -426,16 +432,20 @@ export default function IdeaReviewer() {
             {plans.map((plan) => (
               <div
                 key={plan.name}
-                className={`relative p-8 rounded-2xl border flex flex-col transition-all ${
+                className="relative p-8 rounded-2xl border flex flex-col transition-all"
+                style={
                   plan.highlighted
-                    ? "border-[#7C5CFC]/60 bg-linear-to-b]/10 to-transparent"
-                    : "border-white/5 bg-white/2der-white/10"
-                }`}
+                    ? {
+                        borderColor: `${theme.colors.primary}99`,
+                        background: `linear-gradient(to bottom, ${theme.colors.primary}1a, transparent)`,
+                      }
+                    : { borderColor: "rgba(255,255,255,0.05)" }
+                }
               >
                 {plan.highlighted && (
                   <div
-                    className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#7C5CFC] text-xs font-bold whitespace-nowrap"
-                    style={{ fontFamily: MR }}
+                    className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold whitespace-nowrap text-white"
+                    style={{ fontFamily: MR, background: theme.colors.primary }}
                   >
                     Most Popular
                   </div>
@@ -475,7 +485,7 @@ export default function IdeaReviewer() {
                       className="flex items-start gap-2 text-sm text-white/50"
                       style={{ fontFamily: MR }}
                     >
-                      <span className="text-[#7C5CFC] mt-0.5">✓</span>
+                      <span style={{ color: theme.colors.primary }} className="mt-0.5">✓</span>
                       {f}
                     </li>
                   ))}
@@ -484,10 +494,18 @@ export default function IdeaReviewer() {
                   href="#waitlist"
                   className={`text-center py-3 rounded-full font-semibold text-sm transition-all ${
                     plan.highlighted
-                      ? "bg-[#7C5CFC] hover:bg-[#6A4AEA] shadow-lg shadow-[#7C5CFC]/30"
+                      ? "text-white"
                       : "border border-white/10 hover:border-white/20 text-white/60 hover:text-white"
                   }`}
-                  style={{ fontFamily: MR }}
+                  style={
+                    plan.highlighted
+                      ? {
+                          fontFamily: MR,
+                          background: theme.colors.primary,
+                          boxShadow: theme.shadows.button,
+                        }
+                      : { fontFamily: MR }
+                  }
                 >
                   {plan.cta}
                 </a>
@@ -500,8 +518,17 @@ export default function IdeaReviewer() {
       {/* WAITLIST */}
       <section id="waitlist" className="px-6 py-24 border-t border-white/5">
         <div className="max-w-xl mx-auto text-center relative">
-          <div className="absolute inset-0 bg-[#7C5CFC]/5 rounded-3xl blur-3xl pointer-events-none" />
-          <div className="relative p-12 rounded-3xl border border-[#7C5CFC]/20 bg-[#7C5CFC]/5">
+          <div
+            className="absolute inset-0 rounded-3xl blur-3xl pointer-events-none"
+            style={{ background: `${theme.colors.primary}0d` }}
+          />
+          <div
+            className="relative p-12 rounded-3xl"
+            style={{
+              border: `1px solid ${theme.colors.primary}33`,
+              background: `${theme.colors.primary}0d`,
+            }}
+          >
             <div className="text-4xl mb-4">🚀</div>
             <h2
               className="text-3xl md:text-4xl font-black tracking-tighter mb-3"
@@ -530,15 +557,21 @@ export default function IdeaReviewer() {
                   placeholder="your@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-4 py-3 rounded-full bg-white/5 border border-white/10 text-white placeholder-white/20 text-sm focus:outline-none focus:border-[#7C5CFC]/50"
+                  className="flex-1 px-4 py-3 rounded-full bg-white/5 border border-white/10 text-white placeholder-white/20 text-sm focus:outline-none"
                   style={{ fontFamily: MR }}
+                  onFocus={(e) => (e.target.style.borderColor = `${theme.colors.primary}80`)}
+                  onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.1)")}
                 />
                 <button
                   onClick={() => {
                     if (email) setSubmitted(true);
                   }}
-                  className="px-6 py-3 rounded-full bg-[#7C5CFC] hover:bg-[#6A4AEA] font-semibold text-sm transition-all shadow-lg shadow-[#7C5CFC]/30 whitespace-nowrap"
-                  style={{ fontFamily: MR }}
+                  className="px-6 py-3 rounded-full font-semibold text-sm transition-all whitespace-nowrap text-white"
+                  style={{
+                    fontFamily: MR,
+                    background: theme.colors.primary,
+                    boxShadow: theme.shadows.button,
+                  }}
                 >
                   Join Waitlist
                 </button>
@@ -559,8 +592,8 @@ export default function IdeaReviewer() {
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-16">
             <p
-              className="text-[#7C5CFC] text-sm tracking-widest uppercase mb-3"
-              style={{ fontFamily: MR }}
+              className="text-sm tracking-widest uppercase mb-3"
+              style={{ fontFamily: MR, color: theme.colors.primary }}
             >
               FAQ
             </p>
@@ -587,7 +620,7 @@ export default function IdeaReviewer() {
                   >
                     {faq.q}
                   </span>
-                  <span className="text-[#7C5CFC] text-lg ml-4">
+                  <span style={{ color: theme.colors.primary }} className="text-lg ml-4">
                     {openFaq === i ? "−" : "+"}
                   </span>
                 </button>
@@ -610,8 +643,8 @@ export default function IdeaReviewer() {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
             <p
-              className="text-[#7C5CFC] text-sm tracking-widest uppercase mb-3"
-              style={{ fontFamily: MR }}
+              className="text-sm tracking-widest uppercase mb-3"
+              style={{ fontFamily: MR, color: theme.colors.primary }}
             >
               Legal
             </p>
@@ -687,7 +720,8 @@ export default function IdeaReviewer() {
             style={{ fontFamily: MR }}
           >
             Full legal documents will be published at launch. Questions? Contact
-            us at <span className="text-[#7C5CFC]">legal@orbius.io</span>
+            us at{" "}
+            <span style={{ color: theme.colors.primary }}>legal@orbius.io</span>
           </p>
         </div>
       </section>
@@ -700,7 +734,7 @@ export default function IdeaReviewer() {
         >
           <OrbLogo size={20} />
           <span style={{ fontFamily: BG }}>
-            <span className="text-[#7C5CFC] font-bold">orb</span>ius —
+            <span style={{ color: theme.colors.primary }} className="font-bold">orb</span>ius —
             IdeaReviewer
           </span>
         </a>
