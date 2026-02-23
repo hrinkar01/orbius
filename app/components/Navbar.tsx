@@ -149,7 +149,7 @@ export default function Navbar() {
             </div>
 
             {/* Theme Toggle */}
-            <div className="px-4 py-3 border-b border-white/5">
+            {/* <div className="px-4 py-3 border-b border-white/5">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="text-base">{isDark ? "🌙" : "☀️"}</span>
@@ -158,7 +158,7 @@ export default function Navbar() {
                   </span>
                 </div>
                 {/* Toggle Switch */}
-                <button
+                {/* <button
                   onClick={() => setIsDark(!isDark)}
                   className="relative w-11 h-6 rounded-full transition-all duration-300 focus:outline-none"
                   style={{ background: isDark ? theme.colors.primary : "rgba(255,255,255,0.15)" }}
@@ -169,16 +169,13 @@ export default function Navbar() {
                   />
                 </button>
               </div>
-            </div>
+            </div> */}
 
             {/* Menu Items */}
             <div className="py-2">
               {[
                 { icon: "👤", label: "Profile", sub: "Manage your account" },
-                { icon: "🔔", label: "Notifications", sub: "Email & push alerts" },
                 { icon: "🔒", label: "Privacy", sub: "Data & permissions" },
-                { icon: "💳", label: "Billing", sub: "Plans & invoices" },
-                { icon: "🌐", label: "Language", sub: "English (US)" },
               ].map((item) => (
                 <button
                   key={item.label}
